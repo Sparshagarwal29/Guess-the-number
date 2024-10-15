@@ -38,8 +38,13 @@ btn.addEventListener("click", function(e) {
     } else if (userGuess < x) {
         output.innerHTML = "You guessed Low!";
         output.style.color = "orange";
+    
     } else {
         output.innerHTML = "You guessed High!";
         output.style.color = "orange";
     }
-});
+            const distance = Math.abs(userGuess - x);
+        const closeness = distance <= 10 ? "You're close!" : "You're far!";
+        output.innerHTML += ` ${closeness}`;
+})
+
